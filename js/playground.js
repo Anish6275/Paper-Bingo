@@ -72,12 +72,19 @@ $(document).ready(function () {
                 }
             }, 1000);
         }
+        if(winner.includes(name) && currentUser == name){
+            next();
+        }
         if (winner.length == post) {
             if (users.length - 1 == winner.length) {
                 $('.endgame').attr('onclick', 'window.location.replace("index.html")');
-            } 
-              pop('Bingo!!', post + pos[post - 1] + ' Position', winner[post - 1] + ' completed the Bingo!!');
+            }
+            pop('Bingo!!', post + pos[post - 1] + ' Position', winner[post - 1] + ' completed the Bingo!!');
             post++;
+        }
+        if (users.length - 1 == winner.length) {
+            localStorage.clear();
+            window.location.replace("index.html");
         }
     });
     $(document).on('click', '.box', function () {

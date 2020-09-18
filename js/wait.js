@@ -34,7 +34,7 @@ function room() {
 }
 function start() {
     const colors = ['aquamarine', 'yellow', 'cornflowerblue', 'greenyellow', 'tomato'];
-    i = 0;
+    var i = 0;
     users.forEach(user => {
         firebase.database().ref(`rooms/${localStorage.getItem('roomId')}/users/${user}`).update({
             color: colors[i++]
