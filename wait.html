@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Paper Bingo | Wait</title>
+    <link rel="stylesheet" href="css/paper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/wait.js"></script>
+</head>
+
+<body onload="room()">
+    <center>
+        <article class="article">
+            <h1 class="article-title" onclick="localStorage.clear(); window.location.replace('index.html')">Paper
+                    Bingo</h1>
+            <p class="text-lead">Your Room Code</p>
+            <p id="room_code"></p>
+            <div class="row">
+                <div class="col-12 col">
+                    <button class="btn-block" onclick="copyToClipboard()">Copy Code</button>
+                    <a id="share"><button class="btn-block">Share Code</button></a>
+                </div>
+                <button style="display: none;" id="start" onclick="start()">Start</button>
+            </div>
+            <p class="text-lead">Users Waiting</p>
+            <div class="row flex-spaces"></div>
+        </article>
+    </center>
+</body>
+
+</html>

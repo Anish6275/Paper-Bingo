@@ -1,0 +1,38 @@
+#intro {
+	margin-top: 30%;
+}
+
+h1,
+p,
+h3,
+article .text-lead {
+	margin: 0;
+}
+
+.flex-spaces {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+#bingotable {
+	margin: 0 auto;
+	text-align: center;
+	width: 90vw;
+	border-collapse: collapse;
+}
+
+td {
+	margin: 0 auto;
+	font-size: 3rem;
+	text-align: center;
+	width: 20%;
+	height: calc(20/100 * 90vw);
+}
+
+table tbody tr td {
+	border-top: 2px dashed #000;
+	line-height: 0.5;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	vertical-align: top;
+}
