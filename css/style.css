@@ -60,3 +60,11 @@ table tbody tr td {
 	width: 90vw; 
 	overflow: overlay;
 }
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding-bottom: 30px;
+	text-align: center;
+}
