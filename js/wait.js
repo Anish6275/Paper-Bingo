@@ -7,6 +7,7 @@ firebase.database().ref(`rooms/${localStorage.getItem('roomId')}`).on('value', f
     snap = Object.keys(snapshot.toJSON().users);
     tp = 0;
     html = '';
+    users = [];
     snap.forEach(user => {
         tp++;
         html += '<div class="alert alert-primary">' + user + '</div>';

@@ -1,7 +1,8 @@
+var users = new Array();
+var winner = new Array();
 $(document).ready(function () {
     var post = 1;
     var timer;
-    winner = new Array();
     name = localStorage.getItem('name');
     const pos = ['st', 'nd', 'rd', 'th', 'th'];
     maize = JSON.parse(localStorage.getItem('maize'));
@@ -18,7 +19,6 @@ $(document).ready(function () {
     boxes.forEach((b) => {
         $(b).text(maize[i++]);
     });
-    var users = new Array();
     var room = localStorage.getItem('roomId').substr(0, 3) + '-' + localStorage.getItem('roomId').substr(3, 6);
     $('#room_code').html(`${room}&nbsp;&nbsp;<span class="badge success"><label for="modal-2"><i class="far fa-comment-dots"></i></label></span>`);
     firebase.database().ref(`rooms/${localStorage.getItem('roomId')}/`).on('value', function (snapshot) {
@@ -28,6 +28,7 @@ $(document).ready(function () {
             c = 0;
             currentUser = snap.currentUser;
             time = 30000;
+            users = [];
             Object.keys(snap.users).forEach(user => {
                 c++;
                 users.push(user);
@@ -42,6 +43,10 @@ $(document).ready(function () {
                 Object.keys(snap.winner).forEach(pos => {
                     winner.push(snap.winner[pos].name);
                 });
+            }
+            if (users.length - winner.length <= 1) {
+                localStorage.clear();
+                window.location.replace('index.html');            
             }
             rec = 0;
             $('#players').html(html);
@@ -76,16 +81,9 @@ $(document).ready(function () {
             next();
         }
         if (winner.length == post) {
-            if (users.length - 1 == winner.length) {
-                $('.endgame').attr('onclick', 'window.location.replace("index.html")');
-            }
             pop('Bingo!!', post + pos[post - 1] + ' Position', winner[post - 1] + ' completed the Bingo!!');
             post++;
-        }
-        if (users.length - 1 == winner.length) {
-            localStorage.clear();
-            window.location.replace("index.html");
-        }
+        }      
     });
     $(document).on('click', '.box', function () {
         if (maizeStatus[parseInt($(this).attr("data-box"))] && name == currentUser && !winner.includes(name)) {

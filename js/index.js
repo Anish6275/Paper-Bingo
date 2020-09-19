@@ -42,11 +42,11 @@ function checkRoomAndEnter() {
             if (snapshot.val()) {
                 snap = snapshot.toJSON();
                 localStorage.clear();
-                if (!Object.keys(snap).includes('users')) {
+                if (!(Object.keys(snap)).includes('users')) {
                     localStorage.setItem('roomId', $('#paperInputs2').val().trim().replace('-', '').toUpperCase());
                     $('#enter_room').hide();
                     $('#enter_name').show();
-                } else if (Object.keys(snap.users).length < 5) {
+                } else if ((Object.keys(snap.users)).length < 5) {
                     localStorage.setItem('roomId', $('#paperInputs2').val().trim().replace('-', '').toUpperCase());
                     $('#enter_room').hide();
                     $('#enter_name').show();
