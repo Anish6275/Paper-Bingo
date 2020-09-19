@@ -23,7 +23,7 @@ firebase.database().ref(`rooms/${localStorage.getItem('roomId')}`).on('value', f
 });
 function room() {
     var room = localStorage.getItem('roomId').substr(0, 3) + '-' + localStorage.getItem('roomId').substr(3, 6);
-    $('#room_code').text(room);
+    $('#room_code').html(`${room}&nbsp;&nbsp;<span class="badge success"><label for="modal-2"><i class="far fa-comment-dots"></i></label></span>`);
     $('#share').attr('href', `whatsapp://send?text=Join our Bingo game by the link https://paperbingo.ml/?room=${room} or By the code *${room}*`);
 } function copyToClipboard() {
     var $temp = $("<input>");

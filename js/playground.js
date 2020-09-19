@@ -20,7 +20,7 @@ $(document).ready(function () {
     });
     var users = new Array();
     var room = localStorage.getItem('roomId').substr(0, 3) + '-' + localStorage.getItem('roomId').substr(3, 6);
-    $('#room_code').text(room);
+    $('#room_code').html(`${room}&nbsp;&nbsp;<span class="badge success"><label for="modal-2"><i class="far fa-comment-dots"></i></label></span>`);
     firebase.database().ref(`rooms/${localStorage.getItem('roomId')}/`).on('value', function (snapshot) {
         if (snapshot.val()) {
             snap = snapshot.toJSON();
@@ -72,7 +72,7 @@ $(document).ready(function () {
                 }
             }, 1000);
         }
-        if(winner.includes(name) && currentUser == name){
+        if (winner.includes(name) && currentUser == name) {
             next();
         }
         if (winner.length == post) {

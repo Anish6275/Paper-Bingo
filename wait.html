@@ -14,13 +14,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/wait.js"></script>
+    <script src="https://kit.fontawesome.com/9f37ddf547.js"></script>
+    <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
+    <script src="js/chat.js"></script>
 </head>
 
 <body onload="room()">
     <center>
         <article class="article">
             <h1 class="article-title" onclick="localStorage.clear(); window.location.replace('index.html')">Paper
-                    Bingo</h1>
+                Bingo</h1>
             <p class="text-lead">Your Room Code</p>
             <p id="room_code"></p>
             <div class="row">
@@ -34,6 +37,19 @@
             <div class="row flex-spaces"></div>
         </article>
     </center>
+    <input class="modal-state" id="modal-2" type="checkbox">
+    <div class="modal">
+        <label class="modal-bg" for="modal-2"></label>
+        <div class="modal-body chatBox">
+            <label class="btn-close" for="modal-2">X</label>
+            <h4 class="modal-title">Chats</h4>
+            <div class="chats"></div>
+            <div class="form-group send-msg">
+                <input type="text" placeholder="Enter Messege" id="paperInputs1">
+                <button onclick="send()"><i class="far fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
