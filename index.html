@@ -20,7 +20,8 @@
 <body>
     <center id="intro">
         <article class="article">
-            <h1 class="article-title" onclick="localStorage.clear(); window.location.replace('index.html')">Paper Bingo</h1>
+            <h1 class="article-title" onclick="localStorage.clear(); window.location.replace('index.html')">Paper Bingo
+            </h1>
             <p class="text-lead">How to play?</p>
             <p>
                 <ul>
@@ -32,50 +33,48 @@
                     <li>Have Fun!!</li>
                 </ul>
             </p>
-
-            <div class="row">
-                <button onclick="startGameDisplay()">Start Game</button>
-                <button onclick="joinGameDisplay()">Join Game</button>
-            </div>
+            <br><br>
+            <button onclick="startGameDisplay()">Start Game</button>
+            <button onclick="joinGameDisplay()">Join Game</button>
         </article>
     </center>
     <center id="start" style=" margin-top: 20%; display: none;">
         <h2 class="article-title" onclick="localStorage.clear(); window.location.replace('index.html')">Paper Bingo</h2>
-            <div class="row">
-                <div class="col sm-8">
-                    <p class="text-lead">Enter your Name</p>
-                    <div class="form-group">
-                        <label for="paperInputs1">Enter your name so that your friends can recognise you when you win
-                            the match..</label>
-                        <input class="input-block" type="text" id="paperInputs1">
-                    </div>
-                    <button id="btn_create" onclick="checkNameAndCreate()">Create Room</button>
+        <div class="row">
+            <div class="col sm-8">
+                <p class="text-lead">Enter your Name</p>
+                <div class="form-group">
+                    <label for="paperInputs1">Enter your name so that your friends can recognise you when you win
+                        the match..</label>
+                    <input class="input-block" type="text" id="paperInputs1">
                 </div>
+                <button id="btn_create" onclick="checkNameAndCreate()">Create Room</button>
             </div>
+        </div>
     </center>
     <center id="join" style=" margin-top: 20%; display: none;">
         <h2 class="article-title" onclick="localStorage.clear(); window.location.replace('index.html')">Paper Bingo</h2>
-            <div class="row" id="enter_room">
-                <div class="col sm-8">
-                    <p class="text-lead">Enter Room ID</p>
-                    <div class="form-group">
-                        <label for="paperInputs2">Enter the room id which your friend shared to you..</label>
-                        <input class="input-block" type="text" id="paperInputs2">
-                    </div>
-                    <button id="btn_enter" onclick="checkRoomAndEnter()">Enter Room</button>
+        <div class="row" id="enter_room">
+            <div class="col sm-8">
+                <p class="text-lead">Enter Room ID</p>
+                <div class="form-group">
+                    <label for="paperInputs2">Enter the room id which your friend shared to you..</label>
+                    <input class="input-block" type="text" id="paperInputs2">
                 </div>
+                <button id="btn_enter" onclick="checkRoomAndEnter()">Enter Room</button>
             </div>
-            <div class="row" id="enter_name" style="display: none;">
-                <div class="col sm-8">
-                    <p class="text-lead">Enter Your Name</p>
-                    <div class="form-group">
-                        <label for="paperInputs3">Enter your name so that your friends can recognise you when you win
-                                the match..</label>
-                        <input class="input-block" type="text" id="paperInputs3">
-                    </div>
-                    <button id="btn_join" onclick="checkNameAndJoin()">Join</button>
+        </div>
+        <div class="row" id="enter_name" style="display: none;">
+            <div class="col sm-8">
+                <p class="text-lead">Enter Your Name</p>
+                <div class="form-group">
+                    <label for="paperInputs3">Enter your name so that your friends can recognise you when you win
+                        the match..</label>
+                    <input class="input-block" type="text" id="paperInputs3">
                 </div>
+                <button id="btn_join" onclick="checkNameAndJoin()">Join</button>
             </div>
+        </div>
     </center>
     <label class="paper-btn margin modal" for="modal-1" id="pop" style="display: none;"></label>
     <input class="modal-state" id="modal-1" type="checkbox">
@@ -89,10 +88,10 @@
             <label for="modal-1" class="border">Okk!</label>
         </div>
     </div>
-      
-      <div class="footer">
+
+    <div class="footer">
         <p>Made with &#10084; by Anish Roy</p>
-      </div>
+    </div>
 
 </body>
 

@@ -68,3 +68,17 @@ table tbody tr td {
 	padding-bottom: 30px;
 	text-align: center;
 }
+@media only screen and (min-width: 600px) {
+	#intro {
+		margin-top: 0;
+	}
+	#bingotable {
+		width: 30vw;
+	}
+	td {
+		height: calc(20/100 * 30vw);
+	}
+	.res-btn{
+		max-width: 50%;
+	}
+}
